@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  navigator.serviceWorker.register('scripts/sw.js');
+  navigator.serviceWorker.register('workers/sw.js');
 
   Notification.requestPermission(function (status) {
     Notification.status = status;
