@@ -1,16 +1,16 @@
 (function () {
   'use strict';
 
-  navigator.serviceWorker.register('workers/sw.js');
+  var registration;
 
-  Notification.requestPermission(function (status) {
-    Notification.status = status;
-  });
+  navigator.serviceWorker.register('workers/sw.js')
+    .then(function (registration_) {
+      registration = registration_;
+    });
 
   $(document).on('click', '#notify', function () {
-    console.log(self.registration);
-    navigator.serviceWorker.ready.then(function (registration) {
-      registration.showNotification('hogehoge');
+    Notification.requestPermission(function (result) {
+      registration.showNotification('Hogehoge');
     });
   });
 })();
