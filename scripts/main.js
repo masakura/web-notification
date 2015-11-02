@@ -1,1 +1,1 @@
-!function(){"use strict";navigator.serviceWorker.register("workers/sw.js"),Notification.requestPermission(function(o){Notification.status=o}),$(document).on("click","#notify",function(){console.log(self.registration),navigator.serviceWorker.ready.then(function(o){o.showNotification("hogehoge")})})}();
+!function(){"use strict";var o;navigator.serviceWorker.register("workers/sw.js").then(function(i){o=i}),$(document).on("click","#notify",function(){Notification.requestPermission(function(i){console.assert("granted"===i,i),o.showNotification("Hogehoge")})})}();
