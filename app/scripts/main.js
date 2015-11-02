@@ -10,6 +10,7 @@
 
   $(document).on('click', '#notify', function () {
     Notification.requestPermission(function (result) {
+      console.assert(result === 'granted', result);
       registration.showNotification('Hogehoge');
     });
   });
