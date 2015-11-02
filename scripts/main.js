@@ -1,0 +1,1 @@
+!function(){"use strict";navigator.serviceWorker.register("scripts/sw.js"),Notification.requestPermission(function(i){Notification.status=i}),$(document).on("click","#notify",function(){console.log(self.registration),navigator.serviceWorker.ready.then(function(i){i.showNotification("hogehoge")})})}();
